@@ -1,0 +1,13 @@
+Install python 3 latest versions[3.6.1]
+Set path variable of python 3.6 in the terminal
+pip3 install django
+After installation check py -m django --version
+
+
+django-admin startproject <projectname>
+cd <projectname>
+py -3 manage.py createsuperuser
+py -3 manage.py makemigrations
+py -3 manage.py migrate
+py -3 manage.py runserver
+py -3 manage.py createapplication <applicationame>
