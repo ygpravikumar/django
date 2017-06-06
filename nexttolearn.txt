@@ -1,1 +1,1 @@
-https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
