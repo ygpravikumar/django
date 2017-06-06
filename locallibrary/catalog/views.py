@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 # Create your views here.
 
@@ -27,3 +28,27 @@ def index(request):
                  'num_instances_available': num_instances_available, 'num_authors': num_authors,
                  'num_genres': num_genres, 'num_books_with_sita': num_books_with_sita},
     )
+
+
+class BookListView(generic.ListView):
+    """ BookListView vlass to define the list view for books. """
+    model = Book
+    paginate_by = 10
+
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super(BookListView, self).get_context_data(**kwargs)
+        # Get the blog from id and add it to the context
+        context['some_data'] = 'This is just some data'
+        return context
+    
+class BookDetailView(generic.DetailView):
+    model = Book
+
+class AuthorListView(generic.ListView):
+    model=Author
+    paginated_by = 10
+
+class AuthorDetailView(generic.DetailView):
+    model=Author
